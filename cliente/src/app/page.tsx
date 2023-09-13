@@ -29,7 +29,7 @@ export default function Home() {
       </div>
 
       <div>
-        <div className="text-black font-bold text-9xl">HOMEPAGE</div>
+        <div className="text-black font-bold text-9xl">PAGINA INICIAL</div>
       </div>
 
       <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
