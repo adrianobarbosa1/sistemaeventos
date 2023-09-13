@@ -1,7 +1,5 @@
-"use client";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import { useEffect, useState } from "react";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -16,17 +14,10 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const [sidebarOpen, setSidebarOpen] = useState(false);
-
-  const [loading, setLoading] = useState<boolean>(true);
-
-  useEffect(() => {
-    setTimeout(() => setLoading(false), 1000);
-  }, []);
   return (
     <html lang="pt-BR">
       <body className={inter.className}>
-        <div className="dark:bg-boxdark-2 dark:text-bodydark">{children}</div>
+        <main>{children}</main>
       </body>
     </html>
   );
