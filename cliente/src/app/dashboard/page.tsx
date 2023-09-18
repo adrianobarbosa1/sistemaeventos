@@ -1,4 +1,3 @@
-import ECommerce from "@/components/Dashboard/E-commerce";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -9,7 +8,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-      <ECommerce />
+      <h1>HOMEPAGE DASHBOARD</h1>
     </>
   );
 }
