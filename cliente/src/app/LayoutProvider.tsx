@@ -1,5 +1,7 @@
 "use client";
 
+import Footer from "@/components/Footer";
+import Header from "@/components/Header";
 // Use usePathname for catching route name.
 import { usePathname } from "next/navigation";
 
@@ -12,9 +14,9 @@ export const LayoutProvider = ({ children }: { children: React.ReactNode }) => {
         children
       ) : (
         <>
-          <h1>HEADER</h1>
+          <Header />
           {children}
-          <h1>FOOTER</h1>
+          <Footer />
         </>
       )}
     </>

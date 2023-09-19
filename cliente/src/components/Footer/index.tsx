@@ -1,6 +1,3 @@
-import React from "react";
-import { FaInstagram, FaYoutube } from "react-icons/fa";
-
 const Footer = () => {
   return (
     <footer
@@ -20,17 +17,13 @@ const Footer = () => {
           target="_blank"
           rel="noopener noreferrer"
           className="text-white hover:text-blue-500"
-        >
-          <FaInstagram size={30} strokeWidth={1.5} />
-        </a>
+        ></a>
         <a
           href="https://www.youtube.com/seu-canal"
           target="_blank"
           rel="noopener noreferrer"
           className="text-white hover:text-red-500 ml-2"
-        >
-          <FaYoutube size={30} strokeLinecap="round" strokeLinejoin="round" />
-        </a>
+        ></a>
       </div>
       <div className="flex justify-center mt-2">
         <p className="text-white text-center">
