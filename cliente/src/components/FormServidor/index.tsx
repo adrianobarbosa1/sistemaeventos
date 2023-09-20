@@ -1,15 +1,8 @@
 "use client";
 import { cpf } from "cpf-cnpj-validator";
-import { Metadata } from "next";
-import { useForm, Controller, Form } from "react-hook-form";
-import InputMask from "react-input-mask";
+import { Controller, Form, useForm } from "react-hook-form";
 import toast from "react-hot-toast";
-
-export const metadata: Metadata = {
-  title: "Formulário de cadastro do servidor",
-  description:
-    "Essa página serve para os servidores realizarem inscrições nos eventos",
-};
+import InputMask from "react-input-mask";
 
 const FormServidor: React.FC = () => {
   const {
@@ -157,7 +150,7 @@ const FormServidor: React.FC = () => {
                   />
                   {errors?.registry && (
                     <p className="text-meta-1 text-xs italic mt-1">
-                      {errors?.registry?.message}
+                      {errors.registry?.message}
                     </p>
                   )}
                 </div>
@@ -180,7 +173,7 @@ const FormServidor: React.FC = () => {
                   />
                   {errors?.unit && (
                     <p className="text-meta-1 text-xs italic mt-1">
-                      {errors?.secretary?.message}
+                      {errors.secretary?.message}
                     </p>
                   )}
                 </div>
@@ -199,7 +192,7 @@ const FormServidor: React.FC = () => {
                   />
                   {errors?.unit && (
                     <p className="text-meta-1 text-xs italic mt-1">
-                      {errors?.unit?.message}
+                      {errors.unit?.message}
                     </p>
                   )}
                 </div>
