@@ -1,5 +1,5 @@
 "use client";
-import Header from "@/components/Header";
+import HeaderDashboard from "@/components/HeaderDashboard";
 import Loader from "@/components/Loader";
 import Sidebar from "@/components/Sidebar";
 import type { Metadata } from "next";
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   description: "Sistema de criação de eventos",
 };
 
-export default function RootLayout({
+export default function DashboardLayout({
   children,
 }: {
   children: React.ReactNode;
@@ -43,7 +43,7 @@ export default function RootLayout({
             {/* <!-- ===== Content Area Start ===== --> */}
             <div className="relative flex flex-1 flex-col overflow-y-auto overflow-x-hidden">
               {/* <!-- ===== Header Start ===== --> */}
-              <Header
+              <HeaderDashboard
                 sidebarOpen={sidebarOpen}
                 setSidebarOpen={setSidebarOpen}
               />

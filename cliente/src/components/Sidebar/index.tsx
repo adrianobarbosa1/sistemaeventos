@@ -187,10 +187,22 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                             <Link
                               href="/dashboard/eventos"
                               className={`group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white ${
-                                pathname === "/" && "text-white"
+                                pathname === "/dashboard/eventos" &&
+                                "text-white"
                               } `}
                             >
                               Eventos
+                            </Link>
+                          </li>
+                          <li>
+                            <Link
+                              href="/dashboard/profile"
+                              className={`group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white ${
+                                pathname === "/dashboard/profile" &&
+                                "text-white"
+                              }`}
+                            >
+                              Profile
                             </Link>
                           </li>
                         </ul>
