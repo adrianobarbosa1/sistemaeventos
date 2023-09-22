@@ -7,7 +7,7 @@ const { registerController } = require('../../controllers');
 const router = express.Router();
 
 router
-  .post('/', registerController.createRegister)
+  .post('/', auth('servidorUser'), validate(registerValidation.createRegister), registerController.createRegister)
   .get('/', auth('getRegisters'), validate(registerValidation.getRegisters), registerController.getRegisters);
 
 module.exports = router;

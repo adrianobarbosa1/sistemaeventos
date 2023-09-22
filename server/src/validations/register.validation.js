@@ -2,34 +2,10 @@ const Joi = require('joi');
 
 const createRegister = {
   body: Joi.object().keys({
-    nome: Joi.string().required(),
-    secretaria: Joi.string().optional(),
-    unidExercicio: Joi.string().optional(),
-    email: Joi.string().email().required(),
-    cargo: Joi.string().optional(),
-    telefone: Joi.string().optional(),
-    cpf: Joi.string()
-      .length(14)
-      .optional()
-      .error(() => {
-        return { message: 'CPF Inválido.' };
-      }),
-    curso: Joi.string().required(),
-    funcao: Joi.string().optional(),
-    rua: Joi.string().required(),
-    cep: Joi.string().required(),
-    complemento: Joi.string().optional().allow(''),
-    cidade: Joi.string().required(),
-    uf: Joi.string().required(),
-    bairro: Joi.string().required(),
-    numero: Joi.string().optional().allow(''),
-    dt_nascimento: Joi.date().required(),
-    rg: Joi.string()
-      .required()
-      .error(() => {
-        return { message: 'RG não pode ficar vazio' };
-      }),
-    uf_rg: Joi.string().required(),
+    secretaria: Joi.string().required(),
+    unidExercicio: Joi.string().required(),
+    whatsapp: Joi.string().required(),
+    dtNascimento: Joi.date().required(),
     matricula: Joi.string().required(),
   }),
 };

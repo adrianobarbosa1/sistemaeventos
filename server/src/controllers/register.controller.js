@@ -5,7 +5,6 @@ const { registerService } = require('../services');
 
 const createRegister = catchAsync(async (req, res) => {
   const { user } = req;
-  console.log(req);
   const register = await registerService.createRegister(req.body, user);
   res.status(httpStatus.CREATED).send(register);
 });
