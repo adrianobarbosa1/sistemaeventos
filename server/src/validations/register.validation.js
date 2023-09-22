@@ -1,4 +1,4 @@
-const Joi = require("joi");
+const Joi = require('joi');
 
 const createRegister = {
   body: Joi.object().keys({
@@ -12,22 +12,22 @@ const createRegister = {
       .length(14)
       .optional()
       .error(() => {
-        return { message: "CPF Inválido." };
+        return { message: 'CPF Inválido.' };
       }),
     curso: Joi.string().required(),
     funcao: Joi.string().optional(),
     rua: Joi.string().required(),
     cep: Joi.string().required(),
-    complemento: Joi.string().optional().allow(""),
+    complemento: Joi.string().optional().allow(''),
     cidade: Joi.string().required(),
     uf: Joi.string().required(),
     bairro: Joi.string().required(),
-    numero: Joi.string().optional().allow(""),
+    numero: Joi.string().optional().allow(''),
     dt_nascimento: Joi.date().required(),
     rg: Joi.string()
       .required()
       .error(() => {
-        return { message: "RG não pode ficar vazio" };
+        return { message: 'RG não pode ficar vazio' };
       }),
     uf_rg: Joi.string().required(),
     matricula: Joi.string().required(),
@@ -49,11 +49,11 @@ const update = {
     nome: Joi.string().required(),
     cargo: Joi.string().required(),
     email: Joi.string().email().required(),
-    telefone: Joi.string().allow(""),
+    telefone: Joi.string().allow(''),
     cpf: Joi.string().min(14).required(),
     dt_nascimento: Joi.date().required(),
-    rg: Joi.string().optional().allow(""),
-    uf_rg: Joi.string().optional().allow(""),
+    rg: Joi.string().optional().allow(''),
+    uf_rg: Joi.string().optional().allow(''),
   }),
 };
 
@@ -67,4 +67,5 @@ module.exports = {
   createRegister,
   getRegisters,
   remove,
+  update,
 };

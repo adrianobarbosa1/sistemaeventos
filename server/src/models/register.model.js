@@ -1,6 +1,5 @@
-const mongoose = require("mongoose");
-const validator = require("validator");
-const { toJSON, paginate } = require("./plugins");
+const mongoose = require('mongoose');
+const { toJSON, paginate } = require('./plugins');
 
 const registerSchema = mongoose.Schema(
   {
@@ -8,11 +7,6 @@ const registerSchema = mongoose.Schema(
       type: mongoose.Schema.Types.ObjectId,
       ref: 'User',
       required: true,
-    },
-    nome: {
-      type: String,
-      required: true,
-      trim: true,
     },
     secretaria: {
       type: String,
@@ -28,20 +22,8 @@ const registerSchema = mongoose.Schema(
       type: String,
       required: true,
     },
-    funcao: {
-      type: String,
-      required: true,
-    },
     dtNascimento: {
       type: Date,
-      required: true,
-    },
-    rg: {
-      type: String,
-      required: true,
-    },
-    ufRg: {
-      type: String,
       required: true,
     },
     matricula: {
@@ -61,6 +43,6 @@ const registerSchema = mongoose.Schema(
 registerSchema.plugin(toJSON);
 registerSchema.plugin(paginate);
 
-const Register = mongoose.model("Register", registerSchema);
+const Register = mongoose.model('Register', registerSchema);
 
 module.exports = Register;

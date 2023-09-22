@@ -1,38 +1,33 @@
 const httpStatus = require('http-status');
 const { Register } = require('../models');
-const userService = require('./user.service');
 const ApiError = require('../utils/ApiError');
-const moment = require('moment');
 
-//Create a register
-const createRegister = async (registerBody) => {
-  const register = await getRegisterByCpf(registerBody.cpf)
-  const alreadyRegistered = register.find(item => item.curso === registerBody.curso)
-  // const emailIsGmail = /^[a-z0-9](\.?[a-z0-9]){5,}@g(oogle)?mail\.com$/i.test(registerBody.email)
-
-  // if(!emailIsGmail){
-  //   throw new ApiError(httpStatus.BAD_REQUEST, 'Insira um e-mail do GMAIL válido!');
-  // }
-
-  if (alreadyRegistered) {
-    throw new ApiError(httpStatus.BAD_REQUEST, 'Curso já está registrado!');
+// Create a register
+const createRegister = async (registerBody, user) => {
+  const registerExiste = await Register.findOne({ matricula: registerBody.matricula });
+  if (registerExiste) {
+    throw new ApiError(httpStatus.BAD_REQUEST, 'Matricula já cadastrada');
   }
-  registerBody.registrationNumber = moment().format('YYYYMhmmss').toString();
-  return Register.create(registerBody);
-}
 
-//Query for registers
+  const newRegister = new Register({
+    userId: user._id,
+    secretaria: registerBody.secretaria,
+    unidExercicio: registerBody.unidExercicio,
+    whatsapp: registerBody.whatsapp,
+    dtNascimento: registerBody.dtNascimento,
+    matricula: registerBody.matricula,
+  });
+
+  return Register.create(newRegister);
+};
+
+// Query for registers
 const queryRegisters = async (filter, options) => {
   const registers = await Register.paginate(filter, options);
   return registers;
-}
-
-//Get Register by cpf
-const getRegisterByCpf = async (cpf) => {
-  return Register.find({ cpf: cpf });
 };
 
 module.exports = {
   createRegister,
-  queryRegisters
+  queryRegisters,
 };
