@@ -24,7 +24,7 @@ const FormServidor: React.FC = () => {
   } = useForm<IFormServidor>({ mode: "onBlur" });
 
   const onSubmit: SubmitHandler<IFormServidor> = (data) => {
-    toast.success("Registro concluído com sucesso");
+    toast.success("Inscrição realizada com sucesso!");
 
     console.log(data);
     console.log(errors);
